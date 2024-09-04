@@ -52,7 +52,7 @@ function ContactItem({
       <UpdateContactModal
         show={showModalUpdate}
         onClose={toggleModalUpdate}
-        data={(firstName, lastName, email, phone)}
+       
       />
     </ul>
   );
