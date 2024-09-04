@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+  margin: 5% auto;
+  text-align: center;
+  width: 900px;
+  min-height: 550px;
+  border: 1px solid #d8dbe2;
+  border-radius: 2px;
+}

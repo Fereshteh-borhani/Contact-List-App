@@ -1,0 +1,28 @@
+.mainBody {
+  width: 70%;
+  margin: 3.5% 0 3.5% 25%;
+  background: #fff;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+}
+.header {
+  background: #b7cee8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8dbe2;
+  padding: 20px;
+}
+.header img {
+  width: 35px;
+}
+
+.header h2 {
+  color: #577399;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  font-size: 0.8em;
+}

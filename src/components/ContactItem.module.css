@@ -1,0 +1,67 @@
+.text {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  position: relative;
+  line-height: 3rem;
+  border-right: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+.textHover::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -15px;
+  right: -15px;
+  bottom: -6px;
+  background: #fff;
+  /* box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.12); */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0.95);
+  z-index: -1;
+}
+.textHover:hover::after {
+  transform: scale(1.05);
+  opacity: 1;
+  z-index: 5;
+}
+.text li {
+  /* color: #577399; */
+  color: #151515;
+  padding: 10px;
+  font-size: 0.8em;
+  line-height: 2;
+  position: relative;
+  z-index: 6;
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: initial;
+}
+
+.textHover:nth-child(even) {
+  background-color: #f6f6f6;
+}
+.textHover:hover .edit {
+  opacity: 1;
+  z-index: 9;
+}
+.textHover .edit {
+  opacity: 0;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  font-size: 0.8rem;
+  position: absolute;
+  right: -24px;
+  top: 4px;
+  display: table;
+  bottom: 0;
+  color: #777;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}

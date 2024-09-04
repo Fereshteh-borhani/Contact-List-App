@@ -1,0 +1,70 @@
+.confirmDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #d8dbe2;
+  border: 1px solid #ccc;
+  z-index: 10;
+  padding: 40px;
+  border-radius: 2px;
+  max-width: 45rem;
+  width: 100%;
+  color: #34485e;
+  font-size: 1.2rem;
+}
+
+.confirmDialog p {
+  margin-bottom: 20px;
+}
+
+.confirmDialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.closeButtonDelete {
+  width: calc(25% + 22px);
+  padding: 10px;
+  margin: 25px 8px 10px;
+  cursor: pointer;
+  background-color: #fff1f3;
+  color: #ff3729;
+  border: 1px solid #ff3729;
+  font-size: 0.8rem;
+  transition: 0.2s all ease-in-out;
+  border-radius: 2px;
+  font-weight: 400;
+  line-height: 2;
+}
+.closeButtonDelete:hover {
+  color: #fff1f3;
+  background-color: #ff3729;
+  border: 1px solid #fff1f3;
+}
+.closeButtonClose {
+  width: calc(25% + 22px);
+  padding: 10px;
+  margin: 25px 8px 10px;
+  cursor: pointer;
+  color: #577399;
+  background-color: #b7cee8;
+  border: 1px solid #577399;
+  font-size: 0.8rem;
+  transition: 0.2s all ease-in-out;
+  border-radius: 2px;
+  font-weight: 400;
+  line-height: 2;
+}
+.closeButtonClose:hover {
+  color: #d8dbe2;
+  background-color: #577399;
+  border: 1px solid #d8dbe2;
+}
