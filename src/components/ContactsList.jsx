@@ -5,7 +5,7 @@ import ContactTitle from "./ContactTitle";
 import styles from "./ContactsList.module.css";
 import contactImg from "../../public/contact.svg";
 
-function ContactsList({ contacts }) {
+function ContactsList({ contacts, editHandler }) {
   return (
     <>
       <div className={styles.header}>
@@ -15,8 +15,12 @@ function ContactsList({ contacts }) {
 
       <ContactTitle />
 
-      {contacts.map((contact) => (
-        <ContactItem key={contact.id} data={contact} />
+      {contacts.map((data) => (
+        <ContactItem
+          key={data.id}
+          data={data}
+          editHandler={editHandler}
+        />
       ))}
     </>
   );

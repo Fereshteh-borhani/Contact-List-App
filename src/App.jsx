@@ -16,6 +16,15 @@ function App() {
     );
   };
 
+  const editHandler = (formData) => {
+    console.log(formData);
+    setContacts(
+      contacts.map((contact) =>
+        contact.id === formData.id ? formData : contact
+      )
+    );
+  };
+
   return (
     <div className={styles.container}>
       <LeftSideMenu
@@ -24,7 +33,11 @@ function App() {
         deleteHandler={deleteItems}
       />
 
-      <AddContact contacts={contacts} setContacts={setContacts} />
+      <AddContact
+        contacts={contacts}
+        setContacts={setContacts}
+        editHandler={editHandler}
+      />
     </div>
   );
 }

@@ -7,9 +7,8 @@ import { v4 } from "uuid";
 import Validation from "./validation";
 import addContact from "../../public/add_person.svg";
 
-function AddContact({ contacts, setContacts }) {
+function AddContact({ contacts, setContacts, editHandler }) {
   const [errors, setErrors] = useState({});
-
   const [contact, setContact] = useState({
     id: "",
     firstName: "",
@@ -19,9 +18,7 @@ function AddContact({ contacts, setContacts }) {
   });
 
   const changeHandler = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-
+    const { name, value } = event.target;
     setContact((contact) => ({ ...contact, [name]: value }));
   };
 
@@ -57,7 +54,7 @@ function AddContact({ contacts, setContacts }) {
             onChange={changeHandler}
           />
           {errors.firstName && (
-            <p className={styles.alter}>{errors.firstName}</p>
+            <p  >{errors.firstName}</p>
           )}
         </div>
         <div>
@@ -68,7 +65,7 @@ function AddContact({ contacts, setContacts }) {
             value={contact.lastName}
             onChange={changeHandler}
           />
-          {errors.lastName && <p style={{ color: "red" }}>{errors.lastName}</p>}
+          {errors.lastName && <p>{errors.lastName}</p>}
         </div>
         <div>
           <input
@@ -78,7 +75,7 @@ function AddContact({ contacts, setContacts }) {
             value={contact.email}
             onChange={changeHandler}
           />
-          {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+          {errors.email && <p  >{errors.email}</p>}
         </div>
         <div>
           <input
@@ -89,12 +86,16 @@ function AddContact({ contacts, setContacts }) {
             value={contact.phone}
             onChange={changeHandler}
           />
-          {errors.phone && <p style={{ color: "red" }}>{errors.phone}</p>}
+          {errors.phone && <p  >{errors.phone}</p>}
         </div>
         <button onClick={eventHandler}>Add Contact</button>
       </div>
 
-      <ContactsList contacts={contacts} />
+      <ContactsList
+        contacts={contacts}
+        setContacts={setContacts}
+        editHandler={editHandler}
+      />
     </div>
   );
 }

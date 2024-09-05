@@ -5,42 +5,43 @@ import UpdateContactModal from "./UpdateContactModal";
 import styles from "./ContactItem.module.css";
 
 function ContactItem({
-  data: { id, firstName, lastName, email, phone },
   selected,
   selectedItems,
   toggleSelect,
+  data,
+  editHandler,
 }) {
-  const [showModalUpdate, setShowModalUpdate] = useState(false);
   const textClass = [styles.text, !selected && styles.textHover].join(" ");
+  const [showModalUpdate, setShowModalUpdate] = useState(false);
 
   const toggleModalUpdate = () => {
     setShowModalUpdate(!showModalUpdate);
   };
 
   return (
-    <ul className={textClass} key={id}>
+    <ul className={textClass} key={data.id}>
       {selected && (
         <li className={styles.del}>
           <input
             className={styles.delCheckbox}
             type="checkbox"
-            checked={selectedItems.includes(id)}
-            onChange={() => toggleSelect(id)}
+            checked={selectedItems.includes(data.id)}
+            onChange={() => toggleSelect(data.id)}
           />
           <div className={styles.delSwitch}></div>
         </li>
       )}
       <li>
-        <span> {firstName} </span>
+        <span> {data.firstName} </span>
       </li>
       <li>
-        <span> {lastName} </span>
+        <span> {data.lastName} </span>
       </li>
       <li>
-        <span> {email} </span>
+        <span> {data.email} </span>
       </li>
       <li>
-        <span> {phone} </span>
+        <span> {data.phone} </span>
       </li>
 
       {!selected && (
@@ -52,7 +53,8 @@ function ContactItem({
       <UpdateContactModal
         show={showModalUpdate}
         onClose={toggleModalUpdate}
-       
+        data={data}
+        editHandler={editHandler}
       />
     </ul>
   );
