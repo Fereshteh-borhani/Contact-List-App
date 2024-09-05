@@ -6,7 +6,7 @@ import styles from "./Modal.module.css";
 import Styles from "./UpdateContactModal.module.css";
 
 import Validation from "./validation";
-import filterImg from "../../public/search-person.svg";
+import editImg from "../../public/edit-person.svg";
 
 function UpdateContactModal({ show, onClose, data, editHandler }) {
   if (!show) {
@@ -44,6 +44,7 @@ function UpdateContactModal({ show, onClose, data, editHandler }) {
     if (Object.keys(validationErrors).length === 0) {
       console.log(editHandler);
       editHandler(formData);
+      onClose();
     }
   };
 
@@ -51,8 +52,8 @@ function UpdateContactModal({ show, onClose, data, editHandler }) {
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <img src={filterImg} alt="contact" />
-          <h2>Filter Contacts</h2>
+          <img src={editImg} alt="contact" />
+          <h2>Update Contacts</h2>
         </div>
 
         <div className={Styles.content}>
@@ -97,12 +98,15 @@ function UpdateContactModal({ show, onClose, data, editHandler }) {
             />
             {errors.phone && <p>{errors.phone}</p>}
           </div>
-          <button onClick={eventHandler}>Update Contact</button>
-        </div>
 
-        <button className={styles.buttonFilter} onClick={onClose}>
-          cancel
-        </button>
+          <button className={styles.closeButtonUpdate} onClick={eventHandler}>
+            Update Contact
+          </button>
+
+          <button className={styles.closeButtonClose} onClick={onClose}>
+            cancel
+          </button>
+        </div>
       </div>
     </div>
   );

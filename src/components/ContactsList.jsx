@@ -19,6 +19,7 @@ function ContactsList({ contacts, editHandler }) {
         <ContactItem
           key={data.id}
           data={data}
+          showBatten={true}
           editHandler={editHandler}
         />
       ))}

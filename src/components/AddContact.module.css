@@ -34,6 +34,7 @@
   justify-content: center;
 }
 .content div {
+  position: relative;
   width: 45%;
   margin: 10px;
   padding: 0 10px;
@@ -48,14 +49,13 @@
   height: 40px;
 }
 .content div p {
+  position: absolute;
   text-align: left;
-  width: 100%;
-  font-size: 0.8rem;
-  background-color: #fff1f3;
+  font-size: 0.77rem;
+  background-color: #fff;
   color: #ff3729;
-  width: 100%;
-  padding: 10px;
-  border-radius: 2px;
+  left: 7px;
+  top: -14px;
 }
 .content button {
   width: calc(90% + 20px);

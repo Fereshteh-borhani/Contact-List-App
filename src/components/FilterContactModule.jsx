@@ -44,9 +44,9 @@ const FilterContactModule = ({ show, onClose, contacts }) => {
         <ContactTitle />
 
         {filteredData.map((contact) => (
-          <ContactItem key={contact.id} data={contact} />
+          <ContactItem key={contact.id} data={contact} showBatten={false} />
         ))}
-        
+
         <button className={styles.buttonFilter} onClick={onClose}>
           Close
         </button>

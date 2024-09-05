@@ -5,6 +5,7 @@ import UpdateContactModal from "./UpdateContactModal";
 import styles from "./ContactItem.module.css";
 
 function ContactItem({
+  showBatten,
   selected,
   selectedItems,
   toggleSelect,
@@ -44,7 +45,7 @@ function ContactItem({
         <span> {data.phone} </span>
       </li>
 
-      {!selected && (
+      {showBatten && (
         <li className={styles.edit} onClick={toggleModalUpdate}>
           Edit
         </li>

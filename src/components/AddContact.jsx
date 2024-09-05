@@ -8,6 +8,8 @@ import Validation from "./validation";
 import addContact from "../../public/add_person.svg";
 
 function AddContact({ contacts, setContacts, editHandler }) {
+
+  
   const [errors, setErrors] = useState({});
   const [contact, setContact] = useState({
     id: "",
@@ -53,9 +55,7 @@ function AddContact({ contacts, setContacts, editHandler }) {
             value={contact.firstName}
             onChange={changeHandler}
           />
-          {errors.firstName && (
-            <p  >{errors.firstName}</p>
-          )}
+          {errors.firstName && <p>{errors.firstName}</p>}
         </div>
         <div>
           <input
@@ -75,7 +75,7 @@ function AddContact({ contacts, setContacts, editHandler }) {
             value={contact.email}
             onChange={changeHandler}
           />
-          {errors.email && <p  >{errors.email}</p>}
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div>
           <input
@@ -86,7 +86,7 @@ function AddContact({ contacts, setContacts, editHandler }) {
             value={contact.phone}
             onChange={changeHandler}
           />
-          {errors.phone && <p  >{errors.phone}</p>}
+          {errors.phone && <p>{errors.phone}</p>}
         </div>
         <button onClick={eventHandler}>Add Contact</button>
       </div>
